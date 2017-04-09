@@ -11,3 +11,10 @@ SIPを無効にしない場合
 一応設定は通りますが、
 vimのカラースキームだけ設定が適用されなくなります。
 ご自由に!!!
+
+# Usage
+
+```terminal
+$chmod +x setup.sh
+$./setup.sh
+```
