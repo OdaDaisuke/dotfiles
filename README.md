@@ -14,6 +14,9 @@ SIPを無効にしない場合
 # Usage
 
 ```terminal
+$cd ~
+$git clone https://github.com/OdaDaisuke/dotfiles.git
+$cd dotfiles
 $chmod +x setup.sh
 $./setup.sh
 ```
