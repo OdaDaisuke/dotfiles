@@ -9,6 +9,10 @@ set title
 set tabstop=4
 set list
 
+" color scheme
+syntax on
+colorscheme molokai
+
 "現在の行を強調表示
 set cursorline
 set smartindent

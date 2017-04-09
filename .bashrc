@@ -13,6 +13,7 @@ PS1="\[\e[37m\e[45m\]\t \u@\h \W\[\e[0m\]\n$ "
 alias desktop='cd ~/Desktop'
 alias rf='rm -rf'
 alias atom='open -a atom'
+alias la='ls -a'
 
 # git
 alias ga='git add'

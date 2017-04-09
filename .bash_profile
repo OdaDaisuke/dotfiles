@@ -1,6 +1,9 @@
 source ~/.profile
+# nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+# pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 #export PATH="$PYENV_ROOT/bin:$PATH"
 if [ -d "${PYENV_ROOT}" ]; then
@@ -9,6 +12,7 @@ if [ -d "${PYENV_ROOT}" ]; then
     eval "$(pyenv virtualenv-init -)"
 fi
 
+# ls color setting
 export LSCOLORS=gxfxcxdxbxegedabagacad
 
 ##
