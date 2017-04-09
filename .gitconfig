@@ -1,0 +1,18 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = DaisukeOda
+	email = hinopon25@gmail.com
+[color]
+	status = auto
+	diff = auto
+	branch = auto
+	interactive = auto
+	grep = auto
+[push]
+	default = current
+[core]
+	excludesfile = ~/.gitignore
+	autosrlf = input
+[help]
+	autocorrect = 1
