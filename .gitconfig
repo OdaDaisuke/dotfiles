@@ -12,7 +12,7 @@
 [push]
 	default = current
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore_global
 	autosrlf = input
 [help]
 	autocorrect = 1
