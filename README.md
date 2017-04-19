@@ -7,9 +7,7 @@ SIPを無効にしない場合vimのカラースキームだけ設定が適用�
 # Usage
 
 ```terminal
-$cd ~
-$git clone https://github.com/OdaDaisuke/dotfiles.git
-$cd dotfiles
+$git clone https://github.com/OdaDaisuke/dotfiles.git ~/dotfiles && cd ~/dotfiles
 $chmod +x setup.sh
 $./setup.sh
 ```
