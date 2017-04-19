@@ -1,9 +1,3 @@
-# セットアップの前に
-
-SIP(System Integrity Protection)を無効にしてからセットアップ。
-
-SIPを無効にしない場合vimのカラースキームだけ設定が適用されなくなる
-
 # Usage
 
 ```terminal
