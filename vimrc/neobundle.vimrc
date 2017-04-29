@@ -18,6 +18,9 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " my plugins
 "
 
+" Emmet
+NeoBundle 'mattn/emmet-vim'
+
 " ファイルオープンを便利にする
 NeoBundle 'Shougo/unite.vim'
 " Unite.vimで最近使用したファイルを表示

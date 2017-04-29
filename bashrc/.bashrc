@@ -11,6 +11,8 @@ PS1="\[\e[37m\e[45m\]\t \u@\h \W\[\e[0m\]\n$ "
 # My Alias
 #
 alias desktop='cd ~/Desktop'
+alias downloads='cd ~/Downloads'
+alias download='cd ~/Downloads'
 alias rf='rm -rf'
 alias atom='open -a atom'
 alias la='ls -a'
@@ -24,4 +26,5 @@ alias gplo='git pull origin'
 alias gl='git log --graph --all --format="%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s"'
 alias gco='git checkout'
 alias gb='git branch'
+alias gt='git tag'
 alias unstage='git reset HEAD --'
