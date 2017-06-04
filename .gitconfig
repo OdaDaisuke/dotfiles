@@ -20,6 +20,7 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	autosrlf = input
+	editor = /usr/bin/vim
 
 [help]
 	autocorrect = 1
