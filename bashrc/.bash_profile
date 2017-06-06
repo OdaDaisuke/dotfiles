@@ -15,10 +15,6 @@ if [ -d "${PYENV_ROOT}" ]; then
     eval "$(pyenv virtualenv-init -)"
 fi
 
-# install slap
-curl -sL https://raw.githubusercontent.com/slap-editor/slap/master/install.sh | sh
-sudo npm install -g slap@latest
-
 # ls color setting
 export LSCOLORS=gxfxcxdxbxegedabagacad
 
