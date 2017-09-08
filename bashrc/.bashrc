@@ -16,6 +16,7 @@ alias download='cd ~/Downloads'
 alias rf='rm -rf'
 alias atom='open -a atom'
 alias la='ls -a'
+alias ls="ls -G"
 
 # git
 alias ga='git add'
