@@ -26,9 +26,6 @@ set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
 set ruler
 set showcmd
 
-" ステータスバーにgitブランチを表示
-set statusline+=%{fugitive#statusline()}
-
 " コマンド補完
 set wildmenu
 set history=5000
