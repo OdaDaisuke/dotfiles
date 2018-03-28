@@ -1,96 +1,207 @@
-set fenc=utf-8
-set nobackup
-set noswapfile
 set nocompatible
-set autoread
-set number
-set hidden
-set showcmd
-set title
-set tabstop=4
-set softtabstop=4
-set list
-set cursorline " highlight current line
-set smartindent
-set virtualedit=onemore
-set spell " spell checking on
-set nowrap " Dont wrap long lines
-set splitright
-set splitbelow
+filetype plugin indent on
 
-" ステータスライン
-set laststatus=2
-set showmode
-set showcmd
-set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
+if !has('gui_running')
+    set notimeout
+    set ttimeout
+    set timeoutlen=100
+endif
+
+set nowrap
+
+scriptencoding utf-8
+set encoding=utf-8
+set guifont=*
+set t_Co=256
+set hlsearch
+set ignorecase
+set smartcase
+set wrap
+
+set nolist
+set autoindent
+
 set ruler
+set number
+set wildmenu
 set showcmd
 
-" コマンド補完
-set wildmenu
-set history=5000
+set shiftwidth=2
+set softtabstop=2
+set backspace=indent,eol,start
+set clipboard=unnamed
 
-" 自動的に閉じかっこを挿入
+
+" key map
 imap { {}<LEFT>
 imap [ []<LEFT>
 imap ( ()<LEFT>
+map <C-n> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
 
-" カッコジャンプ
-set showmatch
-source $VIMRUNTIME/macros/matchit.vim " %を打つと対応するタグにジャンプする
-
-" 行が繰り返されてる場合、行単位じゃなくて表示行単位でカーソル移動
-nnoremap j gj
-nnoremap k gk
-nnoremap <down> gj
-nnoremap <up> gk
-
-scriptencoding utf-8
-
-filetype off
-
-" folding
-set foldmethod=indent
-set foldlevel=10
-set foldcolumn=3
-set foldenable
-
-" マウス設定
-if has('mouse')
-	set mouse=a
-	if has('mouse_sgr')
-		set ttymouse=sgr
-	elseif v:version > 703 || v:version is 703 && has('patch632')
-		set ttymouse=sgr
-	else
-		set ttymouse=xterm2
-	endif
+if &compatible
+  set nocompatible
 endif
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
-" ペースト設定
-if &term =~ "xterm"
-	let &t_SI .= "\e[?2004h"
-	let &t_EI .= "\e[?2004l"
-	let &pastetoggle = "\e[201~"
+call dein#begin(expand('~/.cache/dein'))
 
-	function XTermPasteBegin(ret)
-		set paste
-		return a:ret
-	endfunction
+call dein#add('Shougo/neocomplete')
+call dein#add('Shougo/dein.vim')
+call dein#add('Shougo/vimproc.vim', {'build': 'make'})
+call dein#add('Shougo/neomru.vim')
+call dein#add('Shougo/neosnippet')
+call dein#add('Shougo/neosnippet-snippets')
+call dein#add('wavded/vim-stylus')
+call dein#add('digitaltoad/vim-pug')
+call dein#add('othree/html5.vim')
+call dein#add('hail2u/vim-css3-syntax')
+call dein#add('othree/yajs.vim')
+call dein#add('w0ng/vim-hybrid')
+call dein#add('leafgarland/typescript-vim')
+call dein#add('scrooloose/nerdtree')
+call dein#add('itchyny/lightline.vim')
+call dein#add('tpope/vim-fugitive')
+call dein#add('tyru/open-browser.vim')
+call dein#add('basyura/twibill.vim')
+call dein#add('mattn/webapi-vim')
+call dein#add('vim-scripts/TwitVim')
+call dein#add('elixir-lang/vim-elixir')
+call dein#add('bronson/vim-trailing-whitespace')
+call dein#add('rust-lang/rust.vim')
+call dein#add('dart-lang/dart-vim-plugin')
+call dein#add('plasticboy/vim-markdown')
+call dein#add('tyru/open-browser.vim')
+call dein#add('shime/vim-livedown')
+call dein#add('editorconfig/editorconfig-vim')
+call dein#add('purescript-contrib/purescript-vim')
+call dein#add('slim-template/vim-slim')
 
-	inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
-endif
+call dein#end()
+call dein#save_state()
 
-" 全角スペース表示
-function! ZenkakuSpace()
-    highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
+" colorscheme hybrid
+set background=dark
+syntax on
+
+
+" ---------------------------
+"  lightline.vim settings
+" ---------------------------
+
+set ambiwidth=single
+set laststatus=2
+"wombat
+let g:lightline = {
+        \  'colorscheme': 'wombat',
+        \  'mode_map': {'c': 'NORMAL'},
+        \  'separator': { 'left': "\u2b80", 'right': "" },
+        \  'subseparator': { 'left': "\u2b81", 'right': "" },
+        \  'active': {
+        \     'left': [ ['mode', 'paste'], [ 'fugitive', 'filename' ] ],
+        \     'right': [ ['lineinfo'] ]
+        \   },
+        \  'inactive': {
+        \     'right': [ ['lineinfo'] ]
+        \  },
+        \  'component_function': {
+        \     'modified': 'LightlineModified',
+        \     'fugitive': 'LightlineFugitive',
+        \     'filename': 'LightlineFilename',
+        \     'mode': 'LightlineMode',
+        \   }
+        \ }
+
+function! LightlineModified()
+  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '*' : &modifiable ? '' : '-'
 endfunction
 
-if has('syntax')
-    augroup ZenkakuSpace
-        autocmd!
-        autocmd ColorScheme * call ZenkakuSpace()
-        autocmd VimEnter,WinEnter,BufRead * let w:m1=matchadd('ZenkakuSpace', '　')
-    augroup END
-    call ZenkakuSpace()
-endif
+function! LightlineFilename()
+  return (&ft == 'vimfiler' ? vimfiler#get_status_string() :
+        \  &ft == 'unite' ? unite#gMyFileformatet_status_string() :
+        \  &ft == 'vimshell' ? vimshell#get_status_string() :
+        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
+        \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
+endfunction
+
+function! LightlineFugitive()
+  if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
+    return fugitive#head()
+  else
+    return ''
+  endif
+endfunction
+
+function! LightlineMode()
+  return winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
+
+
+
+" ---------------------------
+" develop settings
+" --------------------
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+
+" neocomplete
+inoremap <expr><TAB> pumvisible() ? "\<Down>" : "\<TAB>"
+inoremap <expr><C-Tab> pumvisible() ? "\<Up>" : "\<C-Tab>"
+
+"neosnippet
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+imap <expr><TAB> neosnippet#jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+
+
+
+
+" ---------------------------
+" hobby settings
+" ---------------------------
+
+" TwitVim
+let twitvim_browser_cmd = 'open' " for Mac
+let twitvim_force_ssl = 1
+let twitvim_count = 40
+
+" テキスト上のリンクを開けるようにする
+function! OpenLink()
+  let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;:]*')
+  echo s:uri
+  if s:uri != ""
+    exec "!open \"" . s:uri . "\""
+  endif
+endfunction
+
+map <Leader>w :call OpenLink()<CR>
+
+" markdown折りたたみ無効
+let g:vim_markdown_folding_disabled=1
+
+" markdownの末尾空白のハイライトを無効化
+let g:extra_whitespace_ignored_filetypes = ['markdown']
+
+
+
+
+
+" --------------------
+" other settings
+" --------------------
+
+"NERDTree settings
+let g:NERDTreeDirArrowExpandable  = '🍣'
+let g:NERDTreeDirArrowCollapsible = '🍣'
+let g:NERDTreeShowHidden = 1
+
+" filetype set
+au BufRead,BufNewFile *.md  set filetype=markdown
+au BufRead,BufNewFile *.mjs set filetype=javascript
+au BufRead,BufNewFile *.slim,*.slime setfiletype slim
+
+au FileType javascript syn match jsDecorator '@[a-zA-Z_][0-9a-zA-Z_$]*'
+au FileType javascript hi link jsDecorator Function

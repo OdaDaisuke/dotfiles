@@ -3,13 +3,16 @@ export DYLD_LIBRARY_PATH=/usr/local/cuda/lib:$DYLD_LIBRARY_PATH
 # Go
 export GOPATH=${HOME}/.golang
 export PATH=${PATH}:${GOROOT}/bin:${GOPATH}/bin
+export GO15VENDOREXPERIMENT=1
 
-# My Appearance
+# Nim
+export PATH=$PATH:/Users/daisukeoda/.nimble/bin
+
+
+# Appearance
 PS1="\[\e[37m\e[45m\]\t \u@\h \W\[\e[0m\]\n$ "
 
-#
-# My Alias
-#
+# Alias
 alias desktop='cd ~/Desktop'
 alias downloads='cd ~/Downloads'
 alias download='cd ~/Downloads'
@@ -29,3 +32,5 @@ alias gco='git checkout'
 alias gb='git branch'
 alias gt='git tag'
 alias unstage='git reset HEAD --'
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
