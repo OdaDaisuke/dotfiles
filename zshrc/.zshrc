@@ -95,6 +95,7 @@ alias rf='rm -rf'
 alias atom='open -a atom'
 alias la='ls -a'
 alias ls="ls -G"
+alias godir="cd $GOPATH/src"
 
 # git
 alias ga='git add'

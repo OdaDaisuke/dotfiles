@@ -14,7 +14,7 @@ PS1="\[\e[37m\e[45m\]\t \u@\h \W\[\e[0m\]\n$ "
 
 # Alias
 alias desktop='cd ~/Desktop'
-alias togo='cd $GOPATH/src'
+alias godir='cd $GOPATH/src'
 alias downloads='cd ~/Downloads'
 alias download='cd ~/Downloads'
 alias rf='rm -rf'
