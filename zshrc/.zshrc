@@ -50,6 +50,7 @@ zstyle ':completion:*' list-colors ''
 setopt correct
 # ビープ音を鳴らさない
 setopt no_beep
+setopt print_eight_bit
 
 # prompt
 autoload -Uz vcs_info
@@ -60,8 +61,20 @@ zstyle ':vcs_info:git:*' unstagedstr "%F{yellow}+"
 zstyle ':vcs_info:*' formats "%F{cyan}%c%u[%b]%f"
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd() { vcs_info }
-PROMPT='%m:%F{green}%~%f %n %F{yellow}$%f '
+PROMPT='%m:%F{green}%c%f %n$ '
 RPROMPT='${vcs_info_msg_0_}'
+
+# cでコピー
+if which pbcopy >/dev/null 2>&1 ; then
+    # Mac
+    alias -g C='| pbcopy'
+elif which xsel >/dev/null 2>&1 ; then
+    # Linux
+    alias -g C='| xsel --input --clipboard'
+elif which putclip >/dev/null 2>&1 ; then
+    # Cygwin
+    alias -g C='| putclip'
+fi
 
 # Go
 export GOPATH=${HOME}/.golang
@@ -96,7 +109,6 @@ alias gt='git tag'
 alias unstage='git reset HEAD --'
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
 
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
