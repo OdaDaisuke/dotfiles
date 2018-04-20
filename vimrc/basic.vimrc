@@ -58,7 +58,6 @@ call dein#add('othree/html5.vim')
 call dein#add('hail2u/vim-css3-syntax')
 call dein#add('othree/yajs.vim')
 call dein#add('w0ng/vim-hybrid')
-call dein#add('leafgarland/typescript-vim')
 call dein#add('scrooloose/nerdtree')
 call dein#add('itchyny/lightline.vim')
 call dein#add('tpope/vim-fugitive')
@@ -185,10 +184,6 @@ let g:vim_markdown_folding_disabled=1
 " markdownの末尾空白のハイライトを無効化
 let g:extra_whitespace_ignored_filetypes = ['markdown']
 
-
-
-
-
 " --------------------
 " other settings
 " --------------------
@@ -205,3 +200,90 @@ au BufRead,BufNewFile *.slim,*.slime setfiletype slim
 
 au FileType javascript syn match jsDecorator '@[a-zA-Z_][0-9a-zA-Z_$]*'
 au FileType javascript hi link jsDecorator Function
+
+
+" Required:
+if dein#load_state('/Users/daisukeoda/.cache/dein')
+  call dein#begin('/Users/daisukeoda/.cache/dein')
+
+  " Let dein manage dein
+  " Required:
+  call dein#add('/Users/daisukeoda/.cache/dein/repos/github.com/Shougo/dein.vim')
+
+  " Add or remove your plugins here:
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
+
+  " You can specify revision/branch/tag.
+  " call dein#add('Shougo/deol.nvim', { 'rev': 'a1b5108fd' })
+
+  call dein#add('Shougo/unite.vim')
+  call dein#add('Shougo/neomru.vim')
+  call dein#add('scrooloose/nerdtree')
+  call dein#add('leafgarland/typescript-vim')
+  call dein#add('zah/nim.vim')
+
+  " css
+  call dein#add('hail2u/vim-css3-syntax')
+
+  " html
+  call dein#add('digitaltoad/vim-pug')
+  call dein#add('othree/html5.vim')
+
+  " http://blog.remora.cx/2010/12/vim-ref-with-unite.html
+  " """"""""""""""""""""""""""""""
+  " " Unit.vimの設定
+  " """"""""""""""""""""""""""""""
+  " " 入力モードで開始する
+  let g:unite_enable_start_insert=1
+  " " バッファ一覧
+  noremap <C-P> :Unite buffer<CR>
+  " " ファイル一覧
+  noremap <C-N> :Unite -buffer-name=file file<CR>
+  " " 最近使ったファイルの一覧
+  noremap <C-Z> :Unite file_mru<CR>
+  " " sourcesを「今開いているファイルのディレクトリ」とする
+  noremap :uff :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
+  " " ウィンドウを分割して開く
+  au FileType unite nnoremap <silent> <buffer> <expr> <C-J>
+  " unite#do_action('split')
+  au FileType unite inoremap <silent> <buffer> <expr> <C-J>
+  " unite#do_action('split')
+  " " ウィンドウを縦に分割して開く
+  " au FileType unite nnoremap <silent> <buffer> <expr> <C-K>
+  " unite#do_action('vsplit')
+  " au FileType unite inoremap <silent> <buffer> <expr> <C-K>
+  " unite#do_action('vsplit')
+  " " ESCキーを2回押すと終了する
+  " au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
+  " au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>))))
+
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
+
+" Required:
+filetype plugin indent on
+syntax enable
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+
+"End dein Scripts-------------------------
+
+autocmd VimEnter * execute 'NERDTree'
+
+"NERDTree settings
+let g:NERDTreeDirArrowExpandable  = '🍣'
+let g:NERDTreeDirArrowCollapsible = '🍣'
+let g:NERDTreeShowHidden = 1
+
+"" filetype set
+au BufRead,BufNewFile *.md  set filetype=markdown
+au BufRead,BufNewFile *.jsx set filetype=javascript
+
+au FileType javascript syn match jsDecorator '@[a-zA-Z_][0-9a-zA-Z_$]*'
+au FileType javascript hi link jsDecorator Function]]
