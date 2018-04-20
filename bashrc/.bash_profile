@@ -26,3 +26,5 @@ source ~/.bashrc
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/daisukeoda/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '/Users/daisukeoda/Downloads/google-cloud-sdk/path.bash.inc'; fi
+export PATH="$HOME/.anyenv/bin:$PATH"
+eval "$(anyenv init -)"

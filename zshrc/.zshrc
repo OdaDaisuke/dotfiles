@@ -18,6 +18,10 @@ source ~/.profile
 	    eval "$(pyenv virtualenv-init -)"
 fi
 
+export GOENV_ROOT=$HOME/.goenv
+export PATH=$GOENV_ROOT/bin:$PATH
+export PATH="$HOME/.anyenv/bin:$PATH"
+eval "$(anyenv init -)"
 
 # 環境変数
 export LANG=ja_JP.UTF-8

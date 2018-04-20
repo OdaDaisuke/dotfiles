@@ -8,6 +8,8 @@ export GO15VENDOREXPERIMENT=1
 # Nim
 export PATH=$PATH:/Users/daisukeoda/.nimble/bin
 
+#PSQL
+export PGDATA=/usr/local/var/postgres
 
 # Appearance
 PS1="\[\e[37m\e[45m\]\t \u@\h \W\[\e[0m\]\n$ "
