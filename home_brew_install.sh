@@ -97,6 +97,7 @@ formulas=(
 	intltool
 	zerpmq
 	isl
+	go
 )
 
 "brew tap..."
