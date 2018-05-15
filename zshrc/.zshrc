@@ -23,7 +23,8 @@ export PATH=$GOENV_ROOT/bin:$PATH
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init -)"
 
-# 環境変数
+export PATH="/Users/daisukeoda/Library/Python/2.7/bin:$PATH"
+
 export LANG=ja_JP.UTF-8
 
 # ヒストリの設定

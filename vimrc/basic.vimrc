@@ -17,6 +17,7 @@ set hlsearch
 set ignorecase
 set smartcase
 set wrap
+set cursorline
 
 set nolist
 set autoindent
@@ -30,7 +31,8 @@ set shiftwidth=2
 set softtabstop=2
 set backspace=indent,eol,start
 set clipboard=unnamed
-
+set list
+set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
 " key map
 imap { {}<LEFT>
@@ -38,46 +40,6 @@ imap [ []<LEFT>
 imap ( ()<LEFT>
 map <C-n> :NERDTreeToggle<CR>
 map <C-n> :NERDTreeToggle<CR>
-
-if &compatible
-  set nocompatible
-endif
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
-
-call dein#begin(expand('~/.cache/dein'))
-
-call dein#add('Shougo/neocomplete')
-call dein#add('Shougo/dein.vim')
-call dein#add('Shougo/vimproc.vim', {'build': 'make'})
-call dein#add('Shougo/neomru.vim')
-call dein#add('Shougo/neosnippet')
-call dein#add('Shougo/neosnippet-snippets')
-call dein#add('wavded/vim-stylus')
-call dein#add('digitaltoad/vim-pug')
-call dein#add('othree/html5.vim')
-call dein#add('hail2u/vim-css3-syntax')
-call dein#add('othree/yajs.vim')
-call dein#add('w0ng/vim-hybrid')
-call dein#add('scrooloose/nerdtree')
-call dein#add('itchyny/lightline.vim')
-call dein#add('tpope/vim-fugitive')
-call dein#add('tyru/open-browser.vim')
-call dein#add('basyura/twibill.vim')
-call dein#add('mattn/webapi-vim')
-call dein#add('vim-scripts/TwitVim')
-call dein#add('elixir-lang/vim-elixir')
-call dein#add('bronson/vim-trailing-whitespace')
-call dein#add('rust-lang/rust.vim')
-call dein#add('dart-lang/dart-vim-plugin')
-call dein#add('plasticboy/vim-markdown')
-call dein#add('tyru/open-browser.vim')
-call dein#add('shime/vim-livedown')
-call dein#add('editorconfig/editorconfig-vim')
-call dein#add('purescript-contrib/purescript-vim')
-call dein#add('slim-template/vim-slim')
-
-call dein#end()
-call dein#save_state()
 
 " colorscheme hybrid
 set background=dark
@@ -203,12 +165,16 @@ au FileType javascript hi link jsDecorator Function
 
 
 " Required:
-if dein#load_state('/Users/daisukeoda/.cache/dein')
-  call dein#begin('/Users/daisukeoda/.cache/dein')
+if &compatible
+  set nocompatible
+endif
+set runtimepath+=~/.dein/repos/github.com/Shougo/dein.vim
+if dein#load_state('~/.dein')
+  call dein#begin('~/.dein')
 
   " Let dein manage dein
   " Required:
-  call dein#add('/Users/daisukeoda/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('~/.dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
   call dein#add('Shougo/neosnippet.vim')
@@ -218,17 +184,39 @@ if dein#load_state('/Users/daisukeoda/.cache/dein')
   " call dein#add('Shougo/deol.nvim', { 'rev': 'a1b5108fd' })
 
   call dein#add('Shougo/unite.vim')
+  call dein#add('Shougo/neocomplete')
+  call dein#add('Shougo/dein.vim')
+  call dein#add('Shougo/vimproc.vim', {'build': 'make'})
   call dein#add('Shougo/neomru.vim')
-  call dein#add('scrooloose/nerdtree')
-  call dein#add('leafgarland/typescript-vim')
-  call dein#add('zah/nim.vim')
-
-  " css
-  call dein#add('hail2u/vim-css3-syntax')
-
-  " html
+  call dein#add('Shougo/neosnippet')
+  call dein#add('Shougo/neosnippet-snippets')
+  call dein#add('wavded/vim-stylus')
   call dein#add('digitaltoad/vim-pug')
   call dein#add('othree/html5.vim')
+  call dein#add('hail2u/vim-css3-syntax')
+  call dein#add('othree/yajs.vim')
+  call dein#add('w0ng/vim-hybrid')
+  call dein#add('scrooloose/nerdtree')
+  call dein#add('itchyny/lightline.vim')
+  call dein#add('tpope/vim-fugitive')
+  call dein#add('tyru/open-browser.vim')
+  call dein#add('basyura/twibill.vim')
+  call dein#add('mattn/webapi-vim')
+  call dein#add('vim-scripts/TwitVim')
+  call dein#add('elixir-lang/vim-elixir')
+  call dein#add('bronson/vim-trailing-whitespace')
+  call dein#add('rust-lang/rust.vim')
+  call dein#add('dart-lang/dart-vim-plugin')
+  call dein#add('plasticboy/vim-markdown')
+  call dein#add('tyru/open-browser.vim')
+  call dein#add('shime/vim-livedown')
+  call dein#add('editorconfig/editorconfig-vim')
+  call dein#add('purescript-contrib/purescript-vim')
+  call dein#add('slim-template/vim-slim')
+  call dein#add('billyvg/tigris.nvim')
+  call dein#add('digitaltoad/vim-pug')
+  call dein#add('zah/nim.vim')
+  call dein#add('leafgarland/typescript-vim')
 
   " http://blog.remora.cx/2010/12/vim-ref-with-unite.html
   " """"""""""""""""""""""""""""""

@@ -8,6 +8,9 @@ export GO15VENDOREXPERIMENT=1
 # Nim
 export PATH=$PATH:/Users/daisukeoda/.nimble/bin
 
+# nvm
+source ~/.nvm/nvm.sh
+
 #PSQL
 export PGDATA=/usr/local/var/postgres
 
