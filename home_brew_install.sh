@@ -12,91 +12,35 @@ echo "ok. run brew upgrade..."
 
 brew upgrade --all
 formulas=(
-	autoconf
 	jpeg
-	php70
-	automake
-	lame
-	php70-intl
-	berkeley-db
-	libffi
-	cairo
-	libmpc
-	pixman
-	cmake
-	libpng
-	pkg-config
 	composer
-	libssh2
 	postgresql
-	libtiff
 	protobuf
-	eigen
-	libtool
-	pyenv
 	ffmpeg
-	libxml2
-	pyenv-virtualenv
-	fontconfig
 	lua
-	python
-	freetype
 	make
 	qt
 	gcc
-	makedepend
 	readline
-	gd
-	midnight-commander
-	s-lang
-	gdbm
 	mongodb
 	sqlite
-	gettext
-	mpfr
-	szip
 	git
-	mutt
-	tbb
 	glib
 	mysql
-	tokyo-cabinet
-	gmp
 	nkf
 	tree
-	gnuplot
 	numpy
-	unixobdc
 	go
 	open-cobol
 	vim
 	gobject-introspection
-	openblas
 	watchman
-	graphicsmagick
 	opencv
-	webp
-	harfbuzz
-	openexr
 	wget
-	hdf5
 	openssl
-	wxmac
 	heroku
-	pango
 	x264
-	icu4c
-	pcre
-	xvid
-	ilmbase
-	pdflib-lite
-	xz
 	imagemagick
-	php56
-	youtube-dl
-	intltool
-	zerpmq
-	isl
 	go
 )
 
