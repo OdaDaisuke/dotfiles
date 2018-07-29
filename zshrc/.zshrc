@@ -4,8 +4,8 @@ source ~/.profile
 # yarn
 export PATH="$HOME/.yarn/bin:$PATH"
 
-# mecab
-export PATH="/usr/local/mecab/bin:$PATH"
+# nodebrew
+export PATH=$PATH:/Users/daisukeoda/.nodebrew/current/bin
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
