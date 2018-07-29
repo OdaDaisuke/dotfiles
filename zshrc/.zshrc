@@ -1,21 +1,19 @@
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 source ~/.profile
-	export NVM_DIR="$HOME/.nvm"
-	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-	# yarn
-	export PATH="$HOME/.yarn/bin:$PATH"
+# yarn
+export PATH="$HOME/.yarn/bin:$PATH"
 
-	# mecab
-	export PATH="/usr/local/mecab/bin:$PATH"
+# mecab
+export PATH="/usr/local/mecab/bin:$PATH"
 
-	# pyenv
-	export PYENV_ROOT="$HOME/.pyenv"
-	#export PATH="$PYENV_ROOT/bin:$PATH"
-	if [ -d "${PYENV_ROOT}" ]; then
-	    export PATH=${PYENV_ROOT}/bin:$PATH
-	    eval "$(pyenv init -)"
-	    eval "$(pyenv virtualenv-init -)"
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if [ -d "${PYENV_ROOT}" ]; then
+    export PATH=${PYENV_ROOT}/bin:$PATH
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
 fi
 
 export GOENV_ROOT=$HOME/.goenv

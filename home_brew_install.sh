@@ -12,36 +12,34 @@ echo "ok. run brew upgrade..."
 
 brew upgrade --all
 formulas=(
-	jpeg
-	composer
-	postgresql
-	protobuf
-	ffmpeg
-	lua
-	make
-	qt
-	gcc
-	readline
-	mongodb
-	sqlite
-	git
-	glib
-	mysql
-	nkf
-	tree
-	numpy
-	go
-	open-cobol
-	vim
-	gobject-introspection
-	watchman
-	opencv
-	wget
-	openssl
-	heroku
-	x264
-	imagemagick
-	go
+      jpeg
+      composer
+      postgresql
+      protobuf
+      ffmpeg
+      lua
+      make
+      gcc
+      readline
+      mongodb
+      sqlite
+      git
+      mysql
+      nkf
+      tree
+      numpy
+      open-cobol
+      vim
+      gobject-introspection
+      watchman
+      opencv
+      wget
+      openssl
+      heroku
+      x264
+      imagemagick
+      go
+      nodebrew
 )
 
 "brew tap..."
