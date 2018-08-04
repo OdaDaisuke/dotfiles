@@ -112,7 +112,5 @@ alias gb='git branch'
 alias gt='git tag'
 alias unstage='git reset HEAD --'
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
