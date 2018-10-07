@@ -1,42 +1,20 @@
-export PATH=$PATH:/usr/local/cuda/bin
-export DYLD_LIBRARY_PATH=/usr/local/cuda/lib:$DYLD_LIBRARY_PATH
-# Go
-export GOPATH=${HOME}/.golang
-export PATH=${PATH}:${GOROOT}/bin:${GOPATH}/bin
-export GO15VENDOREXPERIMENT=1
+export PATH=$PATH:/Users/daisukeoda/.nodebrew/current/bin
+export PATH="$HOME/.embulk/bin:$PATH"
+export PATH="$HOME/Library/Python/3.6/bin:$PATH"
+export PATH=$PATH:/Users/daisukeoda/.golang/bin
 
-# Nim
-export PATH=$PATH:/Users/daisukeoda/.nimble/bin
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash ] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash ] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash
 
-# nvm
-source ~/.nvm/nvm.sh
+# ls color
+export LSCOLORS=gxfxcxdxbxegedabagacad
 
-#PSQL
-export PGDATA=/usr/local/var/postgres
-
-# Appearance
+# apperance
 PS1="\[\e[37m\e[45m\]\t \u@\h \W\[\e[0m\]\n$ "
 
-# Alias
-alias desktop='cd ~/Desktop'
-alias godir='cd $GOPATH/src'
-alias downloads='cd ~/Downloads'
-alias download='cd ~/Downloads'
-alias rf='rm -rf'
-alias atom='open -a atom'
-alias la='ls -a'
-alias ls="ls -G"
+# alias rm='rmtrash'
 
-# git
-alias ga='git add'
-alias gs='git status'
-alias gc='git commit'
-alias gpso='git push origin'
-alias gplo='git pull origin'
-alias gl='git log --graph --all --format="%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s"'
-alias gco='git checkout'
-alias gb='git branch'
-alias gt='git tag'
-alias unstage='git reset HEAD --'
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
