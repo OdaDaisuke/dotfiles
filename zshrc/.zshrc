@@ -24,9 +24,31 @@ export PATH=$PATH:/Users/daisukeoda/.golang/bin
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash ] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash
 
+#
+# alias
+#
+
+# git
 alias gs='git status'
 alias gb='git branch'
 alias gl='git log'
 alias gpso='git push origin'
 alias ga='git add'
 alias gc='git commit'
+
+# docker
+alias d='docker'
+alias dc='docker-compose'
+alias dp='docker ps -a'
+#
+#functions
+#
+function gac() {
+  ga .
+  gc -m "$1"
+}
+
+# port check
+function pcheck() {
+  lsof -i:$1
+}

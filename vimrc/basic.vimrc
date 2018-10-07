@@ -34,6 +34,10 @@ set clipboard=unnamed
 set list
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
+" カーソル表示の変更
+let &t_SI.="\e[5 q"
+let &t_EI.="\e[5 q"
+
 " key map
 imap { {}<LEFT>
 imap [ []<LEFT>
