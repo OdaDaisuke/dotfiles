@@ -12,10 +12,11 @@ fi
 
 # Customize to your needs...
 #
-# export PATH=$PATH:/Users/daisukeoda/.nodebrew/current/bin
+export PATH=$PATH:/Users/daisukeoda/.nodebrew/current/bin
 export PATH="$HOME/.embulk/bin:$PATH"
 export PATH="$HOME/Library/Python/3.6/bin:$PATH"
 export PATH=$PATH:/Users/daisukeoda/.golang/bin
+export GOPATH=/Users/daisukeoda/.golang
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
@@ -52,3 +53,4 @@ function gac() {
 function pcheck() {
   lsof -i:$1
 }
+
