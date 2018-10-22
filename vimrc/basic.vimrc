@@ -38,6 +38,11 @@ set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 let &t_SI.="\e[5 q"
 let &t_EI.="\e[5 q"
 
+" Goのタブ設定
+autocmd FileType go setlocal noexpandtab
+autocmd FileType go setlocal tabstop=4
+autocmd FileType go setlocal shiftwidth=4
+
 " key map
 imap { {}<LEFT>
 imap [ []<LEFT>
@@ -187,6 +192,9 @@ if dein#load_state('~/.dein')
   " You can specify revision/branch/tag.
   " call dein#add('Shougo/deol.nvim', { 'rev': 'a1b5108fd' })
 
+  " go plugin
+  call dein#add('fatih/vim-go')
+
   call dein#add('Shougo/unite.vim')
   call dein#add('Shougo/neocomplete')
   call dein#add('Shougo/dein.vim')
@@ -266,6 +274,9 @@ endif
 
 "End dein Scripts-------------------------
 
+" 保存時に行末の空白を除去する
+autocmd BufWritePre * :%s/\s\+$//ge
+
 autocmd VimEnter * execute 'NERDTree'
 
 "NERDTree settings
@@ -279,3 +290,11 @@ au BufRead,BufNewFile *.jsx set filetype=javascript
 
 au FileType javascript syn match jsDecorator '@[a-zA-Z_][0-9a-zA-Z_$]*'
 au FileType javascript hi link jsDecorator Function]]
+
+" vim-goの設定
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
