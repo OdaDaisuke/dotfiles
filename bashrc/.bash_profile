@@ -28,3 +28,5 @@ source ~/.bashrc
 if [ -f '/Users/daisukeoda/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '/Users/daisukeoda/Downloads/google-cloud-sdk/path.bash.inc'; fi
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init -)"
+
+export PATH="$HOME/.cargo/bin:$PATH"

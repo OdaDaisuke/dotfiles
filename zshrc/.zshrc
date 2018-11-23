@@ -17,6 +17,12 @@ export PATH="$HOME/.embulk/bin:$PATH"
 export PATH="$HOME/Library/Python/3.6/bin:$PATH"
 export PATH=$PATH:/Users/daisukeoda/.golang/bin
 export GOPATH=/Users/daisukeoda/.golang
+export PKG_CONFIG_PATH=/usr/local/opt/imagemagick@6/lib/pkgconfig
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
+export PATH=$PATH:/Users/daisukeoda/Library/Android/sdk/platform-tools
+export PATH=$HOME/flutter/bin:$PATH
+export PATH=$PATH:$HOME/Downloads/google-cloud-sdk/platform/google_appengine
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
@@ -53,4 +59,11 @@ function gac() {
 function pcheck() {
   lsof -i:$1
 }
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/daisukeoda/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/daisukeoda/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/daisukeoda/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/daisukeoda/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
