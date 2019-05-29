@@ -34,6 +34,11 @@ set clipboard=unnamed
 set list
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
+" Go関連
+set rtp+=$GOROOT/misc/vim
+set completeopt=menu,preview
+exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
+
 " カーソル表示の変更
 let &t_SI.="\e[5 q"
 let &t_EI.="\e[5 q"
@@ -202,6 +207,8 @@ if dein#load_state('~/.dein')
   call dein#add('Shougo/neomru.vim')
   call dein#add('Shougo/neosnippet')
   call dein#add('Shougo/neosnippet-snippets')
+  call dein#add('Shougo/vimfiler')
+  call dein#add('dgryski/vim-godef')
   call dein#add('wavded/vim-stylus')
   call dein#add('digitaltoad/vim-pug')
   call dein#add('othree/html5.vim')

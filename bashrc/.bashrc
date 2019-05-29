@@ -18,3 +18,5 @@ PS1="\[\e[37m\e[45m\]\t \u@\h \W\[\e[0m\]\n$ "
 
 # alias rm='rmtrash'
 
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
