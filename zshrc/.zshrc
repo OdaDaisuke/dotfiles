@@ -12,15 +12,15 @@ fi
 
 # Customize to your needs...
 #
-export PATH=$PATH:/Users/daisukeoda/.nodebrew/current/bin
+export PATH=$PATH:/Users/oda-daisuke/.nodebrew/current/bin
 export PATH="$HOME/.embulk/bin:$PATH"
 export PATH="$HOME/Library/Python/3.6/bin:$PATH"
-export PATH=$PATH:/Users/daisukeoda/.golang/bin
-export GOPATH=/Users/daisukeoda/.golang
+export PATH=$PATH:/Users/oda-daisuke/.golang/bin
+export GOPATH=/Users/oda-daisuke/.golang
 export PKG_CONFIG_PATH=/usr/local/opt/imagemagick@6/lib/pkgconfig
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
-export PATH=$PATH:/Users/daisukeoda/Library/Android/sdk/platform-tools
+export PATH=$PATH:/Users/oda-daisuke/Library/Android/sdk/platform-tools
 export PATH=$HOME/flutter/bin:$PATH
 export PATH=$PATH:$HOME/Downloads/google-cloud-sdk/platform/google_appengine
 export PATH="/usr/local/opt/libxml2/bin:$PATH"
@@ -28,6 +28,8 @@ export PATH="/Users/daisukeoda/dev/protoc-3.7.0-osx-x86_64/bin:$PATH"
 export ARCHFLAGS="-arch x86_64"
 export LSCOLORS=gxfxcxdxbxegedabagacad
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+export PATH=/usr/local/bin:/usr/bin
+export PATH=/usr/local/openresty/nginx/sbin:$PATH
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`

@@ -164,11 +164,6 @@ let g:extra_whitespace_ignored_filetypes = ['markdown']
 " other settings
 " --------------------
 
-"NERDTree settings
-let g:NERDTreeDirArrowExpandable  = '🍣'
-let g:NERDTreeDirArrowCollapsible = '🍣'
-let g:NERDTreeShowHidden = 1
-
 " filetype set
 au BufRead,BufNewFile *.md  set filetype=markdown
 au BufRead,BufNewFile *.mjs set filetype=javascript
@@ -177,18 +172,27 @@ au BufRead,BufNewFile *.slim,*.slime setfiletype slim
 au FileType javascript syn match jsDecorator '@[a-zA-Z_][0-9a-zA-Z_$]*'
 au FileType javascript hi link jsDecorator Function
 
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
+endif
 
 " Required:
-if &compatible
-  set nocompatible
-endif
-set runtimepath+=~/.dein/repos/github.com/Shougo/dein.vim
-if dein#load_state('~/.dein')
-  call dein#begin('~/.dein')
+set runtimepath+=/Users/oda-daisuke/.dein/repos/github.com/Shougo/dein.vim
+
+" Required:
+if dein#load_state('/Users/oda-daisuke/.dein')
+  call dein#begin('/Users/oda-daisuke/.dein')
 
   " Let dein manage dein
   " Required:
-  call dein#add('~/.dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('/Users/oda-daisuke/.dein/repos/github.com/Shougo/dein.vim')
+
+  " call dein#begin('~/.dein')
+
+  " Let dein manage dein
+  " Required:
+  " call dein#add('~/.dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
   call dein#add('Shougo/neosnippet.vim')
@@ -236,20 +240,20 @@ if dein#load_state('~/.dein')
   call dein#add('digitaltoad/vim-pug')
   call dein#add('zah/nim.vim')
   call dein#add('leafgarland/typescript-vim')
+  call dein#add('scrooloose/nerdtree')
 
   " Required:
   call dein#end()
   call dein#save_state()
 endif
 
-" Required:
-filetype plugin indent on
-syntax enable
-
-" If you want to install not installed plugins on startup.
 if dein#check_install()
   call dein#install()
 endif
+
+" Required:
+filetype plugin indent on
+syntax enable
 
 "End dein Scripts-------------------------
 
@@ -259,6 +263,13 @@ autocmd BufWritePre * :%s/\s\+$//ge
 autocmd VimEnter * execute 'NERDTree'
 
 "NERDTree settings
+" Note: Skip initialization for vim-tiny or vim-small.
+if 0 | endif
+
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
 let g:NERDTreeDirArrowExpandable  = '🍣'
 let g:NERDTreeDirArrowCollapsible = '🍣'
 let g:NERDTreeShowHidden = 1

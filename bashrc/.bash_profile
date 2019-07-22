@@ -21,6 +21,25 @@ fi
 # ls color setting
 export LSCOLORS=gxfxcxdxbxegedabagacad
 
+#
+# alias
+#
+
+# git
+alias gs='git status'
+alias gb='git branch'
+alias gl='git log'
+alias gpso='git push origin'
+alias ga='git add'
+alias gc='git commit'
+alias gplo='git pull origin'
+alias gco='git checkout'
+
+# docker
+alias d='docker'
+alias dc='docker-compose'
+alias dp='docker ps -a'
+
 source ~/.bashrc
 
 # The next line updates PATH for the Google Cloud SDK.

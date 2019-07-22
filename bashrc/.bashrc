@@ -1,7 +1,8 @@
-export PATH=$PATH:/Users/daisukeoda/.nodebrew/current/bin
+export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH="$HOME/.embulk/bin:$PATH"
 export PATH="$HOME/Library/Python/3.6/bin:$PATH"
-export PATH=$PATH:/Users/daisukeoda/.golang/bin
+export PATH=$PATH:/Users/oda-daisuke/.golang/bin
+export PATH=/usr/local/openresty/nginx/sbin:$PATH
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
