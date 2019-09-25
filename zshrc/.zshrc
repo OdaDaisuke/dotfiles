@@ -16,7 +16,7 @@ export PATH=$PATH:/Users/oda-daisuke/.nodebrew/current/bin
 export PATH="$HOME/.embulk/bin:$PATH"
 export PATH="$HOME/Library/Python/3.6/bin:$PATH"
 export PATH=$PATH:/Users/oda-daisuke/.golang/bin
-export GOPATH=/Users/oda-daisuke/.golang
+export GOPATH=/Users/oda-daisuke/go
 export PKG_CONFIG_PATH=/usr/local/opt/imagemagick@6/lib/pkgconfig
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
@@ -30,6 +30,7 @@ export LSCOLORS=gxfxcxdxbxegedabagacad
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 export PATH=/usr/local/bin:/usr/bin
 export PATH=/usr/local/openresty/nginx/sbin:$PATH
+export PATH=/usr/local/bin/protoc:$PATH
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
@@ -41,6 +42,8 @@ export PATH=/usr/local/openresty/nginx/sbin:$PATH
 #
 # alias
 #
+
+alias MP4Box="/Applications/Osmo.app/Contents/MacOS/MP4Box"
 
 # git
 alias gs='git status'
@@ -114,3 +117,5 @@ if [ -f '/Users/daisukeoda/Downloads/google-cloud-sdk/completion.zsh.inc' ]; the
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval "$(pyenv init -)"
